@@ -1,0 +1,25 @@
+@import './../../../scss/index.scss';
+
+.channel-list {
+    background-color: $font-dark;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    width: 136px;
+    z-index: 20;
+
+    .channel-list-container {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+//----TABLET & DESKTOP ----
+.channel-list {
+    @include tablet() {
+    width: 245px;
+    }
+}

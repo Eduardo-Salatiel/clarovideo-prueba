@@ -1,0 +1,21 @@
+@import "./../../../../scss/index.scss";
+
+.loading-card {
+  background-color: $bg-soft-grey;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0 4px 0;
+  position: relative;
+  width: 120px;
+  height: 56px;
+}
+
+//---- TABLET & DESKTOP ----
+.loading-card {
+  @include tablet() {
+    width: 225px;
+    height: 98px;
+  }
+}

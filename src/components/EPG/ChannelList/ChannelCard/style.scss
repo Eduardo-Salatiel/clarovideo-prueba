@@ -1,0 +1,40 @@
+@import './../../../../scss/index.scss';
+
+.channel-card {
+    background-color: $bg-soft-grey;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 4px 0 4px 0;
+    width: 120px;
+
+    .channel-card-number {
+        color: $font-white;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-left: 10px;
+    }
+
+    .fade-in-image {
+        width: 100px;
+        
+    }
+}
+
+//---- TABLET & DESKTOP ----
+.channel-card {
+    @include tablet() {
+    width: 225px;
+
+    .channel-card-number {
+        font-size: 1.5rem;
+        margin-left: 15px;
+    }
+
+    .fade-in-image {
+        width: 175px;
+        height: 98px;
+    }
+    }
+}

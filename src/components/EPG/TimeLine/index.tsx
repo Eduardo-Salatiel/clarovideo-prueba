@@ -1,7 +1,7 @@
 import { timeLinesHours } from "./../../../constants/timeLineHours";
 import './style.scss';
 
-const TimeLine = () => {
+export const TimeLine = () => {
   return (
     <div className="time-line">
       <div className="time-line-today"><span>HOY</span></div>
@@ -14,4 +14,3 @@ const TimeLine = () => {
   );
 };
 
-export default TimeLine;

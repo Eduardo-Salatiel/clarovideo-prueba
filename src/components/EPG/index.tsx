@@ -1,4 +1,5 @@
-import TimeLine from "./TimeLine";
+import { TimeLine } from "./TimeLine";
+import { ChannelList } from "./ChannelList";
 import "./style.scss";
 
 const EPG = () => {
@@ -6,7 +7,7 @@ const EPG = () => {
     <div className="epg">
       <TimeLine />
       <div className="epg-content">
-        <h2>TODO CHANNEL LIST</h2>
+        <ChannelList />
       </div>
     </div>
   );
