@@ -1,0 +1,60 @@
+@import "./../../../scss/index.scss";
+
+.time-line {
+  display: flex;
+  min-height: 30px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+
+  .time-line-today {
+    background-color: #000;
+    color: $font-white;
+    width: 136px;
+    z-index: 5;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+    }
+  }
+
+  .timeline-container {
+    display: flex;
+    position: relative;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    left: 0;
+    top: 0;
+
+    .timeline-hour {
+      background-color: #000;
+      border-left: 1px solid $grey;
+      border-right: 1px solid $grey;
+      color: $font-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+    }
+  }
+}
+
+//---- TABLET & DESKTOP
+
+.time-line {
+  @include tablet() {
+    .time-line-today {
+      width: 245px;
+    }
+
+    .timeline-container {
+      .timeline-hour {
+        width: 150px;
+        height: 30px;
+      }
+    }
+  }
+}
