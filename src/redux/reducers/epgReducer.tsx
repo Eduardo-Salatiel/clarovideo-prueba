@@ -1,28 +1,28 @@
 import { Channel } from "../../interfaces/ProgramGuide";
-import { GET_EGP, LOADING_EGP } from "../types";
+import { GET_EPG, LOADING_EPG } from "../types";
 
-export interface EGPState {
+export interface EPGState {
   channels: Channel[];
   isLoading: boolean;
 }
 
-export type egpActions =
-  | { type: typeof GET_EGP; payload: Channel[] }
-  | { type: typeof LOADING_EGP };
+export type epgActions =
+  | { type: typeof GET_EPG, payload: Channel[] }
+  | { type: typeof LOADING_EPG };
 
 const initState = {
   channels: [],
   isLoading: false,
 };
 
-export const egpReducer = (state: EGPState = initState,action: egpActions): EGPState => {
+export const epgReducer = (state: EPGState = initState,action: epgActions): EPGState => {
   switch (action.type) {
-    case GET_EGP:
+    case GET_EPG:
       return {
         ...state,
         channels: [...action.payload],
       };
-    case LOADING_EGP:
+    case LOADING_EPG:
       return {
         ...state,
         isLoading: !state.isLoading,

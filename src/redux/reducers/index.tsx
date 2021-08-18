@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { modalReducer } from './modalReducer';
-import { egpReducer } from './egpReducer';
+import { epgReducer } from './epgReducer';
 
 
 export const rootReducer = combineReducers({
     modalReducer,
-    egpReducer
+    epgReducer
 })

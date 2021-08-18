@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { egpActions } from "../reducers/egpReducer";
-import { GET_EGP, LOADING_EGP } from "../types";
+import { epgActions } from "../reducers/epgReducer";
+import { GET_EPG, LOADING_EPG } from "../types";
 import { ProgramGuideResponse } from "../../interfaces/ProgramGuide";
 
 const BASE_URL = "https://mfwkweb-api.clarovideo.net/services/epg/channel";
@@ -24,17 +24,17 @@ const PARAMS = {
   quantity: "20",
 };
 
-export const getEGP = () => async (dispatch: Dispatch) => {
+export const getEPG = () => async (dispatch: Dispatch) => {
   try {
-    dispatch<egpActions>({ type: LOADING_EGP });
+    dispatch<epgActions>({ type: LOADING_EPG });
     const resp = await axios.get<ProgramGuideResponse>(BASE_URL, {
       params: PARAMS,
     });
-    dispatch<egpActions>({
-      type: GET_EGP,
+    dispatch<epgActions>({
+      type: GET_EPG,
       payload: resp.data.response.channels,
     });
-    dispatch<egpActions>({ type: LOADING_EGP });
+    dispatch<epgActions>({ type: LOADING_EPG });
   } catch (error) {
     console.log(error.message);
   }
