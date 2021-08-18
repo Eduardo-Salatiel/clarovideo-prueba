@@ -10,7 +10,6 @@ const Modal = () => {
   const dispatch = useDispatch();
   const { modal } = useAppSelector((state) => state.modalReducer);
 
-
   const handleCloseClick = () => {
     dispatch(closeModal());
   };
