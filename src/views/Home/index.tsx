@@ -10,7 +10,7 @@ const Home = () => {
 
   const handleEPGClick = () => {
     dispatch(getEPG());
-    dispatch(openModal({ showModal: true, modal: "EGP" }));
+    dispatch(openModal({ showModal: true, modal: "EPG" }));
   };
 
   return (

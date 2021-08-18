@@ -4,7 +4,7 @@ import { LoadingCards } from "./LoadingCards";
 import "./style.scss";
 
 export const ChannelList = () => {
-  const { channels, isLoading } = useAppSelector((state) => state.egpReducer);
+  const { channels, isLoading } = useAppSelector((state) => state.epgReducer);
 
   return (
     <div className="channel-list">
