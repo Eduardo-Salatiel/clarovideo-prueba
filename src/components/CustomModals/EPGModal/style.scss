@@ -1,0 +1,14 @@
+
+
+.epg-modal {
+
+    .epg-program-detail {
+        height: 30vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .epg {
+        height: calc(70vh - 40px);
+    }
+}

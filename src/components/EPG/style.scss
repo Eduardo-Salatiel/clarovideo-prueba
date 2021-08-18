@@ -1,0 +1,11 @@
+.epg {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(70vh - 40px);
+  overflow: hidden;
+  height: fit-content;
+  
+  .epg-content {
+    overflow-y: scroll;
+  }
+}
