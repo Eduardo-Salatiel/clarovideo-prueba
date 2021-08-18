@@ -5,7 +5,7 @@
     display: flex;
     height: fit-content;
     flex-direction: column;
-    width: 136px;
+    min-width: 136px;
     z-index: 20;
 
     .channel-list-container {
@@ -20,6 +20,6 @@
 //----TABLET & DESKTOP ----
 .channel-list {
     @include tablet() {
-    width: 216px;
+    min-width: 216px;
     }
 }

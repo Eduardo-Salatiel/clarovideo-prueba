@@ -1,11 +1,13 @@
 @import './../../../../scss/index.scss';
 
 .event-item {
-    border: .5px solid $grey;
+    border: 1px solid $grey;
+    background: $bg-soft-grey;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-start;
+    padding-left: 15px;
     width: 300px;
     height: 100%;
 
@@ -15,6 +17,7 @@
 
     .event-item-name {
         font-size: 16px;
+        margin-bottom: 5px;
     }
 
     .event-item-duration {

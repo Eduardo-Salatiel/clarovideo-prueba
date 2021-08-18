@@ -6,6 +6,7 @@
   height: fit-content;
   
   .epg-content {
+    display: flex;
     overflow-y: scroll;
   }
 }
