@@ -138,7 +138,4 @@ export const timeLinesHours = [
   {
     hour: "24:00hs.",
   },
-  {
-    hour: "24:30hs.",
-  },
 ];

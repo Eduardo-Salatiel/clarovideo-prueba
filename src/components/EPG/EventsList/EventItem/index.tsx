@@ -7,7 +7,7 @@ interface Props {
 
 const EventItem = ({ eventInfo }: Props) => {
     return (
-        <div className="event-item" >
+        <div className="event-item" onMouseEnter={() => {console.log(eventInfo)}} >
             <span className="event-item-name">{ eventInfo.name }</span>
             <span className="event-item-duration">{ eventInfo.date_begin.split(" ")[1] } - {eventInfo.date_end.split(" ")[1]} </span>
         </div>

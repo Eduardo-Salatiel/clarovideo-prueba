@@ -10,7 +10,7 @@
   .time-line-today {
     background-color: #000;
     color: $font-white;
-    width: 136px;
+    min-width: 136px;
     z-index: 5;
 
     span {
@@ -47,7 +47,7 @@
 .time-line {
   @include tablet() {
     .time-line-today {
-      width: 216px;
+      min-width: 216px;
     }
 
     .timeline-container {

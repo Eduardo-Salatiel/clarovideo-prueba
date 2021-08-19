@@ -1,0 +1,29 @@
+@import "./../../../scss/index.scss";
+
+.epg-controls {
+    display: flex;
+    width: 80px;
+    height: 30px;
+    max-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    
+    button {
+    background-color: $bg-dark;
+    border: none;
+    color: $font-white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 50%;
+
+    &:active {
+        background-color:rgba(0,0,0,.8);
+    }
+  }
+}
