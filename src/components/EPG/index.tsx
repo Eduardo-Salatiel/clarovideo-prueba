@@ -6,7 +6,7 @@ import { useCarousel } from "../../hooks/useCarousel";
 import { EpgControls } from "./EpgControls";
 
 const EPG = () => {
-  const { leftPosition, handleNextClick, handlePrevClick } = useCarousel(150);
+  const { leftPosition, handleNextClick, handlePrevClick } = useCarousel(300);
 
   console.log(leftPosition);
 

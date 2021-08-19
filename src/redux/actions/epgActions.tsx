@@ -1,8 +1,8 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 import { epgActions } from "../reducers/epgReducer";
-import { GET_EPG, LOADING_EPG } from "../types";
-import { ProgramGuideResponse } from "../../interfaces/ProgramGuide";
+import { CLEAN_EVENT_INFO, GET_EPG, GET_EVENT_INFO, LOADING_EPG } from "../types";
+import { Event, ProgramGuideResponse } from "../../interfaces/ProgramGuide";
 
 const BASE_URL = "https://mfwkweb-api.clarovideo.net/services/epg/channel";
 const PARAMS = {
@@ -38,4 +38,12 @@ export const getEPG = () => async (dispatch: Dispatch) => {
   } catch (error) {
     console.log(error.message);
   }
+};
+
+export const getEventInfo = (payload: Event) => (dispatch: Dispatch) => {
+  dispatch<epgActions>({ type: GET_EVENT_INFO, payload });
+};
+
+export const cleanEventInfo = (payload: Event) => (dispatch: Dispatch) => {
+  dispatch<epgActions>({ type: CLEAN_EVENT_INFO });
 };

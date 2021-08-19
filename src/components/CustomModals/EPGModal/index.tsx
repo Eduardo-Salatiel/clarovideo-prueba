@@ -1,12 +1,11 @@
 import EPG from '../../EPG'
+import EpgProgramDetail from '../../EpgProgramDetail';
 import './style.scss';
 
 const EPGModal = () => {
     return (
         <div className="epg-modal" >
-            <div className="epg-program-detail">
-                <h1>INFO PROGRAMA</h1>
-            </div>
+            <EpgProgramDetail />
             <EPG />
         </div>
     )
