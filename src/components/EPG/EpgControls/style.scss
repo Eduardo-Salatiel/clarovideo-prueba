@@ -1,16 +1,16 @@
 @import "./../../../scss/index.scss";
 
 .epg-controls {
-    display: flex;
-    width: 80px;
-    height: 30px;
-    max-height: 30px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 20;
-    
-    button {
+  display: flex;
+  width: 60px;
+  height: 30px;
+  max-height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+
+  button {
     background-color: $bg-dark;
     border: none;
     color: $font-white;
@@ -23,7 +23,16 @@
     width: 50%;
 
     &:active {
-        background-color:rgba(0,0,0,.8);
+      background-color: rgba(0, 0, 0, 0.8);
     }
+  }
+}
+
+//---- TABLET & DESKTOP ----
+
+.epg-controls {
+  @include tablet() {
+    width: 80px;
+
   }
 }

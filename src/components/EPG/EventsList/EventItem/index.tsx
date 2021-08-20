@@ -9,14 +9,16 @@ import {
   getEventDuration,
   getEventItemWidth,
 } from "../../../../utils/epgUtils";
+import { useVerifyIsMobile } from "../../../../hooks/useVerifyIsMobile";
 
 interface Props {
   eventInfo: Event;
-  firstElement: boolean
+  firstElement: boolean;
 }
 
 const EventItem = ({ eventInfo, firstElement }: Props) => {
   const dispatch = useDispatch();
+  const { isMobile } = useVerifyIsMobile();
 
   const handleMouseEnter = () => dispatch(getEventInfo(eventInfo));
   const handleMouseLeave = () => dispatch(cleanEventInfo(eventInfo));
@@ -30,7 +32,7 @@ const EventItem = ({ eventInfo, firstElement }: Props) => {
         width: `${getEventItemWidth(
           eventInfo.date_begin,
           eventInfo.date_end,
-          300,
+          isMobile ? 240 : 300,
           firstElement
         )}px`,
       }}

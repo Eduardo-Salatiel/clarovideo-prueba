@@ -1,26 +1,43 @@
-@import './../../../../scss/index.scss';
+@import "./../../../../scss/index.scss";
 
 .event-item {
-    border: 1px solid $grey;
-    background: $bg-soft-grey;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 15px;
-    width: 300px;
-    height: 100%;
+  border: 1px solid $grey;
+  background: $bg-soft-grey;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5px;
+  width: 300px;
+  height: 100%;
 
-    .event-item-name, .event-item-duration {
-        color: $font-white;
-    }
+  .event-item-name,
+  .event-item-duration {
+    color: $font-white;
+  }
+
+  .event-item-name {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .event-item-duration {
+    font-size: 8px;
+  }
+}
+
+//---- TABLET & DESKTOP ----
+.event-item {
+  @include tablet() {
+    padding-left: 15px;
 
     .event-item-name {
-        font-size: 16px;
-        margin-bottom: 5px;
+      font-size: 15px;
+      margin-bottom: 5px;
     }
 
     .event-item-duration {
-        font-size: 10px;
+      font-size: 10px;
     }
+  }
 }

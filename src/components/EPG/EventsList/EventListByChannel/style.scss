@@ -1,6 +1,13 @@
-
+@import './../../../../scss/index.scss';
 
 .event-list-by-channel {
     display: flex;
+    min-height: 64.2px;
+}
+
+//---- TABLET & DESKTOP ----
+.event-list-by-channel {
+    @include tablet() {
     min-height: 92px;
+    }
 }
