@@ -35,8 +35,9 @@
       border-right: 1px solid $grey;
       color: $font-white;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      padding-left: 5px;
       width: 120px;
     }
   }

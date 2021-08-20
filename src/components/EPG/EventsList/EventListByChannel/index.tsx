@@ -9,8 +9,8 @@ interface Props {
 const EventListByChannel = ({ channelEvents }: Props) => {
   return (
     <div className="event-list-by-channel">
-      {channelEvents.map((event) => (
-        <EventItem key={event.id} eventInfo={event} />
+      {channelEvents.map((event,index) => (
+        <EventItem key={event.id} eventInfo={event} firstElement={index === 0 ? true: false } />
       ))}
     </div>
   );

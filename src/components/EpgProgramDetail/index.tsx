@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../redux/hooks";
+import { getEventDuration } from "../../utils/epgUtils";
 import "./style.scss";
 
 const EpgProgramDetail = () => {
@@ -10,8 +11,7 @@ const EpgProgramDetail = () => {
         <>
           <h2 className="epg-program-detail-title">{eventInfo?.name}</h2>
           <span className="epg-program-detail-duration">
-            {eventInfo?.date_begin.split(" ")[1]} a{" "}
-            {eventInfo?.date_end.split(" ")[1]}
+            {getEventDuration(eventInfo.date_begin, eventInfo.date_end, "a")}
           </span>
           <p className="epg-program-detail-description">
             {eventInfo?.description}

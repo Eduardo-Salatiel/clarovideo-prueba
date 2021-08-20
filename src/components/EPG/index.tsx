@@ -8,8 +8,6 @@ import { EpgControls } from "./EpgControls";
 const EPG = () => {
   const { leftPosition, handleNextClick, handlePrevClick } = useCarousel(300);
 
-  console.log(leftPosition);
-
   return (
     <>
       <div className="epg">

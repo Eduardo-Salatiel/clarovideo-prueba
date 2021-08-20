@@ -1,6 +1,12 @@
 
 export const timeLinesHours = [
   {
+    hour: "0:00hs.",
+  },
+  {
+    hour: "0:30hs.",
+  },
+  {
     hour: "1:00hs.",
   },
   {
