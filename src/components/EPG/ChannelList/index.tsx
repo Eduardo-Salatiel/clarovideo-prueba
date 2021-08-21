@@ -1,22 +1,32 @@
-import { useAppSelector } from "../../../redux/hooks";
 import { ChannelCard } from "./ChannelCard";
 import { LoadingCards } from "./LoadingCards";
+import { Channel } from "../../../interfaces/ProgramGuide";
 import "./style.scss";
+import React from "react";
 
-export const ChannelList = () => {
-  const { channels, isLoading } = useAppSelector((state) => state.epgReducer);
+interface Props {
+  isLoading: boolean;
+  channels: Channel[];
+}
 
-  return (
-    <div className="channel-list">
-      <div className="channel-list-container">
-        {isLoading ? (
-          <LoadingCards />
-        ) : (
-          channels.map((channel) => (
-            <ChannelCard channelInfo={channel} key={channel.id} />
-          ))
-        )}
+export const ChannelList = React.forwardRef(
+  ({ channels, isLoading }: Props, ref: any) => {
+
+    return (
+      <div className="channel-list" ref={ref}>
+        <div className="channel-list-today">
+          <span>HOY</span>
+        </div>
+        <div className="channel-list-container">
+          {isLoading ? (
+            <LoadingCards />
+          ) : (
+            channels.map((channel) => (
+              <ChannelCard channelInfo={channel} key={channel.id} />
+            ))
+          )}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);

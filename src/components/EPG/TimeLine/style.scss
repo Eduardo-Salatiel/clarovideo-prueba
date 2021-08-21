@@ -2,24 +2,11 @@
 
 .time-line {
   display: flex;
-  min-height: 30px;
-  overflow: hidden;
-  position: relative;
+  height: 30px;
+  z-index: 5;
   transition: 0.5s;
-
-  .time-line-today {
-    background-color: #000;
-    color: $font-white;
-    min-width: 136px;
-    z-index: 5;
-
-    span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30px;
-    }
-  }
+  position:absolute;
+  top: 0;
 
   .timeline-container {
     display: flex;
@@ -47,10 +34,6 @@
 
 .time-line {
   @include tablet() {
-    .time-line-today {
-      min-width: 216px;
-    }
-
     .timeline-container {
       .timeline-hour {
         width: 150px;

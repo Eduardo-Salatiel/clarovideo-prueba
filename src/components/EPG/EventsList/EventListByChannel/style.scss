@@ -2,12 +2,14 @@
 
 .event-list-by-channel {
     display: flex;
-    min-height: 64.2px;
+    max-height: 64.2px;
+    height: 64.2px
 }
 
 //---- TABLET & DESKTOP ----
 .event-list-by-channel {
     @include tablet() {
-    min-height: 92px;
+    max-height: 92px;
+    height: 92px;
     }
 }

@@ -27,7 +27,7 @@ export const epgReducer = (
     case GET_EPG:
       return {
         ...state,
-        channels: [...action.payload],
+        channels: [...action.payload]
       };
     case GET_EVENT_INFO:
       return {

@@ -19,9 +19,9 @@ const PARAMS = {
   region: "guatemala",
   HKS: "web61144bb49d549",
   user_id: "54343080",
-  date_from: "20210818000000",
-  date_to: "20210818180000",
-  quantity: "20",
+  date_from: "20210820000000",
+  date_to: "20210820060000",
+  quantity: "60",
 };
 
 export const getEPG = () => async (dispatch: Dispatch) => {

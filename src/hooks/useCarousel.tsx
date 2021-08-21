@@ -15,7 +15,7 @@ export const useCarousel = (itemSize: number) => {
   const handleNextClick = () => {
     if (
       leftPosition <
-      (itemSize *48) 
+      (itemSize *40) 
     ) {
       setLeftPosition(leftPosition + itemSize);
     } 

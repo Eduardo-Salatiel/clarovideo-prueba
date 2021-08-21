@@ -7,9 +7,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: flex-start;
-  padding-left: 5px;
-  width: 300px;
-  height: 100%;
+  padding: 0 4px 0 4px;
 
   .event-item-name,
   .event-item-duration {
@@ -29,7 +27,7 @@
 //---- TABLET & DESKTOP ----
 .event-item {
   @include tablet() {
-    padding-left: 15px;
+    padding: 0 8px 0 8px;
 
     .event-item-name {
       font-size: 15px;
