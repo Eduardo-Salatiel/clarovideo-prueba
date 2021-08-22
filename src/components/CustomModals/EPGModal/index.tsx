@@ -1,14 +1,25 @@
-import EPG from '../../EPG'
-import EpgProgramDetail from '../../EpgProgramDetail';
-import './style.scss';
+import { Fragment } from "react";
+import { useAppSelector } from "../../../redux/hooks";
+import EPG from "../../EPG";
+import EPGError from "../../EPGError";
+import EpgProgramDetail from "../../EpgProgramDetail";
+import "./style.scss";
 
 const EPGModal = () => {
-    return (
-        <div className="epg-modal" >
-            <EpgProgramDetail />
-            <EPG />
-        </div>
-    )
-}
+  const { error } = useAppSelector((state) => state.epgReducer);
 
-export default EPGModal
+  return (
+    <div className="epg-modal">
+      {!error ? (
+        <Fragment>
+          <EpgProgramDetail />
+          <EPG />
+        </Fragment>
+      ) : (
+        <EPGError />
+      )}
+    </div>
+  );
+};
+
+export default EPGModal;

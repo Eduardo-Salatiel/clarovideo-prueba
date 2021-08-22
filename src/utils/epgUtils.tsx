@@ -1,14 +1,18 @@
+import { MONTHS } from "../constants/months";
+
+const date = new Date();
+
 const getEventHour = (date: string) => {
   return date.split(" ")[1].split(":").slice(0, 2).join(":");
 };
 
-const convertHourToInt = (date: string):number => {
-    const hour: number = Number(getEventHour(date).replace(":", "."));
-    const intPart: number = Math.floor(hour);
-    const floatPart:number = Number((hour-intPart)/0.6); 
+const convertHourToInt = (date: string): number => {
+  const hour: number = Number(getEventHour(date).replace(":", "."));
+  const intPart: number = Math.floor(hour);
+  const floatPart: number = Number((hour - intPart) / 0.6);
 
-    return Number(intPart + floatPart);
-}
+  return Number(intPart + floatPart);
+};
 
 export const getEventDuration = (
   dateBegin: string,
@@ -34,18 +38,8 @@ export const getEventItemWidth = (
   }
 };
 
-export const isVisible = function(ele:any, container: any):boolean {
-  const eleTop = ele.offsetTop;
-  const eleBottom = eleTop + ele.clientHeight;
-
-  const containerTop = container.scrollTop;
-  const containerBottom = containerTop + container.clientHeight;
-
-  // The element is fully visible in the container
-  return (eleTop >= containerTop && eleBottom <= containerBottom) ||
-      // Some part of the element is visible in the container
-      (eleTop < containerTop && containerTop < eleBottom) ||
-      (eleTop < containerBottom && containerBottom < eleBottom);
+// 202108200000 00
+//El parametro from hace referencia a el dia y la hora
+export const getDateForFetch = (from: string) => {
+  return `${date.getFullYear()}${MONTHS[date.getMonth()]}${from}0000`;
 };
-
-

@@ -1,7 +1,14 @@
 import axios from "axios";
 import { Dispatch } from "redux";
 import { epgActions } from "../reducers/epgReducer";
-import { CLEAN_EVENT_INFO, GET_EPG, GET_EVENT_INFO, LOADING_EPG } from "../types";
+import {
+  CLEAN_EVENT_INFO,
+  GET_EPG,
+  GET_EVENT_INFO,
+  LOADING_EPG,
+  GET_MORE_EVENTS,
+  FETCH_EPG_ERROR,
+} from "../types";
 import { Event, ProgramGuideResponse } from "../../interfaces/ProgramGuide";
 
 const BASE_URL = "https://mfwkweb-api.clarovideo.net/services/epg/channel";
@@ -19,26 +26,44 @@ const PARAMS = {
   region: "guatemala",
   HKS: "web61144bb49d549",
   user_id: "54343080",
-  date_from: "20210820000000",
-  date_to: "20210820060000",
-  quantity: "60",
+  quantity: "200",
 };
 
-export const getEPG = () => async (dispatch: Dispatch) => {
-  try {
-    dispatch<epgActions>({ type: LOADING_EPG });
-    const resp = await axios.get<ProgramGuideResponse>(BASE_URL, {
-      params: PARAMS,
-    });
-    dispatch<epgActions>({
-      type: GET_EPG,
-      payload: resp.data.response.channels,
-    });
-    dispatch<epgActions>({ type: LOADING_EPG });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+export const getEPG =
+  (dateFrom: string, dateTo: string) => async (dispatch: Dispatch) => {
+    try {
+      dispatch<epgActions>({ type: LOADING_EPG });
+      const resp = await axios.get<ProgramGuideResponse>(BASE_URL, {
+        params: { ...PARAMS, date_from: dateFrom, date_to: dateTo },
+      });
+
+      dispatch<epgActions>({
+        type: GET_EPG,
+        payload: resp.data.response.channels,
+      });
+
+      dispatch<epgActions>({ type: LOADING_EPG });
+    } catch (error) {
+      dispatch<epgActions>({ type: LOADING_EPG });
+      dispatch<epgActions>({ type: FETCH_EPG_ERROR });
+    }
+  };
+
+export const getMoreEpgEvents =
+  (dateFrom: string, dateTo: string) => async (dispatch: Dispatch) => {
+    try {
+      const resp = await axios.get<ProgramGuideResponse>(BASE_URL, {
+        params: { ...PARAMS, date_from: dateFrom, date_to: dateTo },
+      });
+
+      dispatch<epgActions>({
+        type: GET_MORE_EVENTS,
+        payload: resp.data.response.channels,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
 export const getEventInfo = (payload: Event) => (dispatch: Dispatch) => {
   dispatch<epgActions>({ type: GET_EVENT_INFO, payload });
@@ -46,4 +71,8 @@ export const getEventInfo = (payload: Event) => (dispatch: Dispatch) => {
 
 export const cleanEventInfo = (payload: Event) => (dispatch: Dispatch) => {
   dispatch<epgActions>({ type: CLEAN_EVENT_INFO });
+};
+
+export const egpError = () => (dispatch: Dispatch) => {
+  dispatch<epgActions>({ type: FETCH_EPG_ERROR });
 };

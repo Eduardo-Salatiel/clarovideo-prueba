@@ -8,16 +8,14 @@ export const useGetEpgChannels = () => {
   const [moreChannels, setMoreChannels] = useState<Channel[]>([]);
 
   const getMoreChannels = () => {
-    setMoreChannels((prevState) => [
-      ...prevState,
-      ...channels.slice(channelIndex.current, channelIndex.current + 20),
-    ]);
-    channelIndex.current += 20;
+    if (channelIndex.current < channels.length) {
+      setMoreChannels((prevState) => [
+        ...prevState,
+        ...channels.slice(channelIndex.current, channelIndex.current + 20),
+      ]);
+      channelIndex.current += 20;
+    }
   };
-
-  const getLessChannels = () => {
-    console.log("SI MENOS");
-  }
 
   useEffect(() => {
     if (channelIndex.current === 20) {
@@ -29,6 +27,5 @@ export const useGetEpgChannels = () => {
     channels: moreChannels,
     getMoreChannels,
     isLoading,
-    getLessChannels
   };
 };

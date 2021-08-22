@@ -10,7 +10,7 @@ const EventListByChannel = ({ channelEvents }: Props) => {
   return (
     <div className="event-list-by-channel">
       {channelEvents.map((event,index) => (
-        <EventItem key={event.id} eventInfo={event} firstElement={index === 0 ? true: false } />
+        <EventItem key={event.id} eventInfo={event} firstElement={index === 0 ? true: false }/>
       ))}
     </div>
   );
