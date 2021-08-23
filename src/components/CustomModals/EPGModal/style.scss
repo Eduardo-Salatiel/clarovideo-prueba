@@ -2,6 +2,12 @@
 
 .epg-modal {
     width: 100%;
+    .epg-program-detail-video {
+        position: fixed;
+        top: -20px;
+        width: 100vw;
+        z-index: -10;
+    }
 
     .epg {
         height: calc(65vh - 40px);

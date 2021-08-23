@@ -2,11 +2,11 @@ import { MONTHS } from "../constants/months";
 
 const date = new Date();
 
-const getEventHour = (date: string) => {
+export const getEventHour = (date: string) => {
   return date.split(" ")[1].split(":").slice(0, 2).join(":");
 };
 
-const convertHourToInt = (date: string): number => {
+export const convertHourToInt = (date: string): number => {
   const hour: number = Number(getEventHour(date).replace(":", "."));
   const intPart: number = Math.floor(hour);
   const floatPart: number = Number((hour - intPart) / 0.6);

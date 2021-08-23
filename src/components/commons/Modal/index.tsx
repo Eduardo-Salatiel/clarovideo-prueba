@@ -22,7 +22,7 @@ const Modal = () => {
   };
 
   return ReactDOM.createPortal(
-    <div id="modal" className="modal animation">
+    <div id="modal" className="modal">
       <button className="modal-close" type="button" onClick={handleCloseClick}>
         <img src={closeIcon} alt="cerrar" />
       </button>
