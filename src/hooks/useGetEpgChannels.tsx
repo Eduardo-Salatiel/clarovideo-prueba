@@ -20,6 +20,10 @@ export const useGetEpgChannels = () => {
   useEffect(() => {
     if (channelIndex.current === 20) {
       setMoreChannels(channels.slice(0, channelIndex.current));
+    } else {
+      setMoreChannels((prevState) => [
+        ...channels.slice(0, channelIndex.current),
+      ]);
     }
   }, [channels]);
 
